@@ -123,6 +123,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
@@ -133,6 +134,17 @@ DATABASES = {
        'PORT': '5432'
    }
 }
+
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'max',
+#        'USER': 'postgres',
+#        'PASSWORD': 'Neonah@100',
+#        'HOST': 'localhost',
+#        'PORT': '5432'
+#    }
+# }
 
 # DATABASES = {
 #     'default': {
@@ -167,7 +179,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 ###DEFAULT_CURRENCY##
-DEFAULT_CURRENCY = 'UGX'
+DEFAULT_CURRENCY = 'ugx'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

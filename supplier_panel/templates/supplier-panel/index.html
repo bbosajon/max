@@ -7,7 +7,7 @@
         <div class="content-header">
             <div>
                 <h2 class="content-title card-title">Dashboard</h2>
-                <p>Whole data about your business here</p>
+                <!-- <p>Whole data about your business here</p> -->
             
             </div>
             {% if messages %}
@@ -21,7 +21,8 @@
             {% endfor %}
             {% endif %}
             <div>
-                {% comment %} <a href="#" class="btn btn-primary"><i class="text-muted material-icons md-post_add"></i>Create report</a> {% endcomment %}
+                {% comment %} <a href="#" class="btn btn-primary">
+                    <i class="text-muted material-icons md-post_add"></i>Create report</a> {% endcomment %}
             </div>
         </div>
         <div class="row">
@@ -40,7 +41,9 @@
             <div class="col-lg-3">
                 <div class="card card-body mb-4">
                     <article class="icontext">
-                        <span class="icon icon-sm rounded-circle bg-success-light"><i class="text-success material-icons md-local_shipping"></i></span>
+                        <span class="icon icon-sm rounded-circle bg-success-light">
+                            <i class="text-success material-icons md-local_shipping"></i>
+                        </span>
                         <div class="text">
                             <h6 class="mb-1 card-title">Underway Orders</h6>
                             <span>{{orders_underway.count}}</span>
@@ -52,7 +55,9 @@
             <div class="col-lg-3">
                 <div class="card card-body mb-4">
                     <article class="icontext">
-                        <span class="icon icon-sm rounded-circle bg-warning-light"><i class="text-warning material-icons md-qr_code"></i></span>
+                        <span class="icon icon-sm rounded-circle bg-warning-light">
+                            <i class="text-warning material-icons md-qr_code"></i>
+                        </span>
                         <div class="text">
                             <h6 class="mb-1 card-title">Products</h6>
                             <span>{{products_supplier.count}}</span>
@@ -64,7 +69,8 @@
             <div class="col-lg-3">
                 <div class="card card-body mb-4">
                     <article class="icontext">
-                        <span class="icon icon-sm rounded-circle bg-info-light"><i class="text-info material-icons md-shopping_basket"></i></span>
+                        <span class="icon icon-sm rounded-circle bg-info-light">
+                            <i class="text-info material-icons md-shopping_basket"></i></span>
                         <div class="text">
                             <h6 class="mb-1 card-title">Orders</h6>
                             <span>{{orders_supplier.count}}</span>
@@ -97,7 +103,8 @@
                                                 <p class="text-muted font-xs">{{product.product_supercategory}}</p>
                                             </div>
                                         </div>
-                                        <a href="{% url 'supplier_dashboard:supplier-edit-product' product.id %}" class="btn btn-xs"><i class="material-icons "></i> View</a>
+                                        <a href="{% url 'supplier_dashboard:supplier-edit-product' product.id %}" class="btn btn-xs">
+                                            <i class="material-icons "></i> View</a>
                                     </div>
                                     {% endfor %}
                                 </div>

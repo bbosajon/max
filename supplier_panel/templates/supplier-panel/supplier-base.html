@@ -35,7 +35,8 @@
                     <img src="{{site_info.site_logo.url}}" class="logo" alt="{{site_info.site_name}}" />
                 </a>
                 <div>
-                    <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+                    <button class="btn btn-icon btn-aside-minimize">
+                        <i class="text-muted material-icons md-menu_open"></i></button>
                 </div>
             </div>
             <nav>
@@ -148,15 +149,27 @@
                             </div>
                         </li> -->
                         <li class="dropdown nav-item">
-                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="{% static 'assets-supplier/imgs/people/avatar-2.png'%}" alt="User" /></a>
+                            {% csrf_token %}
+                            <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false">
+                                <!-- {% if profile_obj.status %}  -->
+                                    <!-- <img id="url-img" src="{{ profile.image.url }}" width="180" height="180" 
+                                        style="width:180px;height:180px;" alt="{{profile.user}}"> -->
+                                <!-- {% else %} -->
+                                    <img class="img-xs rounded-circle" src="{% static 'assets-supplier/imgs/people/avatar-2.png' %}" alt="User" />
+                                <!-- {% endif %} -->
+                                </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
-                                <a class="dropdown-item" href="{% url 'accounts:account_details'%}"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
-                                <a class="dropdown-item" href="{% url 'supplier_dashboard:bank-info' %}"><i class="material-icons md-settings"></i>Account Settings</a>
+                                <a class="dropdown-item" href="{% url 'accounts:account_details' %}">
+                                    <i class="material-icons md-perm_identity"></i>Edit Profile</a>
+                                <a class="dropdown-item" href="{% url 'supplier_dashboard:bank-info' %}">
+                                    <i class="material-icons md-settings"></i>Account Settings</a>
                                 <!-- <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a> -->
-                                <a class="dropdown-item" href="{% url 'supplier_dashboard:payments' %}"><i class="material-icons md-receipt"></i>Billing</a>
+                                <a class="dropdown-item" href="{% url 'supplier_dashboard:payments' %}">
+                                    <i class="material-icons md-receipt"></i>Billing</a>
                                 <!-- <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a> -->
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="{% url 'accounts:logout'%}"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                                <a class="dropdown-item text-danger" href="{% url 'accounts:logout' %}">
+                                    <i class="material-icons md-exit_to_app"></i>Logout</a>
                             </div>
                         </li>
                     </ul>

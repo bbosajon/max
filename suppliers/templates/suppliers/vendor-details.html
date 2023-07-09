@@ -8,7 +8,7 @@
         <div class="container">
             <div class="breadcrumb">
                 <a href="{% url 'home:index' %}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-                <span></span> Store <span></span> Nest Food
+                <span></span> Store <span></span> e-max
             </div>
         </div>
     </div>
@@ -43,7 +43,8 @@
                         <div class="col-lg-3">
                             <div class="vendor-info text-white mb-15">
                                 <ul class="font-sm">
-                                    <li><img class="mr-5" src="{% static 'assets/imgs/theme/icons/icon-location.svg'%}" alt="" /><strong>Address: </strong> <span>{{vendor_detail.address}},{{vendor_detail.city}} {{vendor_detail.post_code}} {{vendor_detail.country}}</span></li>
+                                    <li><img class="mr-5" src="{% static 'assets/imgs/theme/icons/icon-location.svg'%}" alt="" /><strong>Address: </strong>
+                                         <span>{{vendor_detail.address}},{{vendor_detail.city}} {{vendor_detail.post_code}} {{vendor_detail.country}}</span></li>
                                     <li><img class="mr-5" src="{% static 'assets/imgs/theme/icons/icon-contact.svg'%}" alt="" /><strong>Call Us:</strong><span> {{vendor_detail.mobile_number}}</span></li>
                                 </ul>
                             </div>

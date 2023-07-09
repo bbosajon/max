@@ -50,9 +50,12 @@ class Product(models.Model):
         Profile, on_delete=models.CASCADE, verbose_name=_("Product Vendor"), blank=True, null=True,)
     product_name = models.CharField(max_length=150, verbose_name=_("Name"))
     digital_file = models.FileField(
-        upload_to='products/files/', verbose_name=_("Digital File"), blank=True, null=True, help_text=_("Please use our recommended allowed extension are zip , rar"), validators=[FileExtensionValidator(allowed_extensions=['zip', 'rar'])])
+        upload_to='products/files/', verbose_name=_("Digital File"), blank=True, null=True,
+          help_text=_("Please use our recommended allowed extension are zip , rar"), validators=[FileExtensionValidator(allowed_extensions=['zip', 'rar'])])
     # DESCRIPTION
-    product_description = models.TextField(verbose_name=_("Short Description"))
+    # product_description = models.TextField(verbose_name=_("Short Description"))
+    product_description = RichTextField(blank=True, null=True,
+                            verbose_name=_("Short Description"))
     product_image = models.ImageField(
         upload_to='products/imgs/', default='products/product.jpg', max_length=500, verbose_name=_("Product Image"))
     product_minicategor = models.ForeignKey(
@@ -68,9 +71,9 @@ class Product(models.Model):
         SuperCategory, on_delete=models.SET_NULL, blank=True, null=True, verbose_name=_("Super Category"))
     content = RichTextField(blank=True, null=True,
                             verbose_name=_("Full Description"))
-    PRDPrice = models.FloatField(
+    PRDPrice = models.DecimalField(max_digits=10, decimal_places=2,
         blank=True, null=True, verbose_name=_("Price"))
-    PRDDiscountPrice = models.FloatField(default=0,
+    PRDDiscountPrice = models.DecimalField(default=0,max_digits=10, decimal_places=2,
                                          blank=True, null=True,  verbose_name=_("Discount"))
 
     additional_image_1 = models.ImageField(

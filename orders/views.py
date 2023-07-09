@@ -64,7 +64,7 @@ def add_to_cart(request):
             if request.user.is_authenticated and not request.user.is_anonymous:
                 order = Order.objects.filter(
                     user=request.user, is_finished=False).first()
-                print("order: ", order)
+                # print("order: ", order)
             else:
                 cart_id = request.session.get('cart_id')
                 order = Order.objects.all().filter(id=cart_id, is_finished=False)
@@ -74,6 +74,8 @@ def add_to_cart(request):
 
         if not Product.objects.all().filter(id=product_id).exists():
             return HttpResponse(f"this product not found !")
+        
+       
 
         if order:
             if request.user.is_authenticated and not request.user.is_anonymous:
@@ -90,6 +92,8 @@ def add_to_cart(request):
                 item_supplier = OrderDetailsSupplier.objects.get(
                     order=old_orde, product=product)
                 # for i in items:
+                remaining_quantity = product.available - item.quantity
+                print(remaining_quantity)
                 if item.quantity >= product.available:
                     qyt = item.quantity
                     # i.quantity = int(qyt)
@@ -680,10 +684,10 @@ def payment(request):
     else:
         PUBLIC_KEY = settings.STRIPE_PUBLIC_KEY
 
-    if settings.RAZORPAY_KEY_ID == "" or settings.RAZORPAY_KEY_ID == None:
-        RAZORPAY_KEY_ID = False
-    else:
-        RAZORPAY_KEY_ID = settings.RAZORPAY_KEY_ID
+    # if settings.RAZORPAY_KEY_ID == "" or settings.RAZORPAY_KEY_ID == None:
+    #     RAZORPAY_KEY_ID = False
+    # else:
+    #     RAZORPAY_KEY_ID = settings.RAZORPAY_KEY_ID
 
     if settings.API_KEY == "" or settings.API_KEY == None:
         api_key_paymob = False
@@ -849,15 +853,15 @@ def payment(request):
             if Payment.objects.all().filter(order=old_orde):
                 payment_info = Payment.objects.get(order=old_orde)
             payment = None
-            if RAZORPAY_KEY_ID:
-                client = razorpay.Client(
-                    auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
-                data = {
-                    "amount": float(old_orde.amount) * 7828,
-                    "currency": "INR",
-                    "receipt": "order_rcptid_11",
-                }
-                payment = client.order.create(data=data)['id']
+            # if RAZORPAY_KEY_ID:
+            #     client = razorpay.Client(
+            #         auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+            #     data = {
+            #         "amount": float(old_orde.amount) * 7828,
+            #         "currency": "INR",
+            #         "receipt": "order_rcptid_11",
+            #     }
+            #     payment = client.order.create(data=data)['id']
 
             context = {
                 "order": old_orde,
@@ -866,7 +870,7 @@ def payment(request):
                 "PUBLIC_KEY": PUBLIC_KEY,
                 "blance": blance,
                 "order_amount": order_amount,
-                "RAZORPAY_KEY_ID": RAZORPAY_KEY_ID,
+                # "RAZORPAY_KEY_ID": RAZORPAY_KEY_ID,
                 'RAZORPAY_order_id': payment,
                 "image": image,
                 "api_key_paymob": api_key_paymob,

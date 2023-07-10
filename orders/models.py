@@ -29,6 +29,7 @@ class Order(models.Model):
     amount = models.CharField(max_length=50, )
     tracking_no = models.CharField(max_length=50,  blank=True, null=True)
     rpt_cache = models.URLField(blank=True, null=True)
+    # quantity = models.IntegerField(default=0)
     weight = models.DecimalField(
         default=0,  max_digits=10, decimal_places=3,  verbose_name=_("WEIGHT"))
     is_finished = models.BooleanField(default=False)

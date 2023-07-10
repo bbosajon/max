@@ -92,8 +92,8 @@ def add_to_cart(request):
                 item_supplier = OrderDetailsSupplier.objects.get(
                     order=old_orde, product=product)
                 # for i in items:
-                remaining_quantity = product.available - item.quantity
-                print(remaining_quantity)
+                # remaining_quantity = product.available - item.quantity
+                # print(remaining_quantity)
                 if item.quantity >= product.available:
                     qyt = item.quantity
                     # i.quantity = int(qyt)
@@ -355,6 +355,7 @@ def add_to_cart(request):
             new_order.sub_total = f_total
             new_order.weight = weight
             new_order.amount = total
+
             new_order.save()
             # code for total amount supplier order
             order_details__supplier = OrderDetailsSupplier.objects.all().filter(
@@ -1428,7 +1429,7 @@ def create_checkout_session(request):
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'usd',
+                        'currency': 'ugx',
                         'unit_amount': int(float(order.amount)*100),
                         'product_data': {
                             'name': f"Order Number :{order.id}",

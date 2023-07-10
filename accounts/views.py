@@ -15,6 +15,7 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from PIL import Image
 from django.conf import settings
+from django.db.models import Sum
 from wsgiref.util import FileWrapper
 # Import mimetypes module
 import mimetypes
@@ -238,6 +239,12 @@ class MyOrdersJsonListView(LoginRequiredMixin, View):
         lower = upper - 10
         orders = list(Order.objects.all().filter(
             user=self.request.user).values().order_by("-order_date")[lower:upper])
+        
+        for order in orders:
+            order_id = order['id']
+            total_quantity = OrderDetails.objects.filter(order_id=order_id).aggregate(Sum('quantity'))
+            order['quantity'] = total_quantity['quantity__sum'] if total_quantity['quantity__sum'] else 0
+
         orders_size = len(Order.objects.all().filter(user=self.request.user))
         max_size = True if upper >= orders_size else False
         return JsonResponse({"data": orders,  "max": max_size, "orders_size": orders_size, }, safe=False)

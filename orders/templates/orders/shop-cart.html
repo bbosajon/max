@@ -21,7 +21,11 @@
             <div class="col-lg-8 mb-40">
                 <h1 class="heading-2 mb-10">Your Cart</h1>
                 <div class="d-flex justify-content-between">
-                    <h6 class="text-body">There are <span class="text-brand">{{order_details.count}}</span> Items in your cart</h6>
+                    <h6 class="text-body">
+                        There are 
+                        <span class="text-brand">
+                            {{order_details.count}}
+                        </span> Items in your cart</h6>
                     {% comment %} <h6 class="text-body"><a href="#" class="text-muted"><i class="fi-rs-trash mr-5"></i>Clear Cart</a></h6> {% endcomment %}
                 </div>
             </div>
@@ -94,7 +98,11 @@
                                 <td class="price" data-title="Price">
                                     <h4 class="text-brand">{{request.session.currency}} {% widthratio item.price|currency:request.session.currency  1 item.quantity%} </h4>
                                 </td>
-                                <td class="action text-center" data-title="Remove"><a href="{% url "orders:remove-item" productdeatails_id=item.id %}" class="text-body"><i class="fi-rs-trash"></i></a></td>
+                                <td class="action text-center" data-title="Remove">
+                                    <a href="{% url "orders:remove-item" productdeatails_id=item.id %}" class="text-body">
+                                        <i class="fi-rs-trash"></i>
+                                    </a>
+                                </td>
                             </tr>
                          {%endfor%}   
                           
@@ -196,7 +204,9 @@
                                         <h6 class="text-muted">Subtotal</h6>
                                     </td>
                                     <td class="cart_total_amount">
-                                        <h4 class="text-brand text-end">{{request.session.currency}} {{f_total|currency:request.session.currency}}</h4>
+                                        <h4 class="text-brand text-end">
+                                            {{request.session.currency}} {{f_total|currency:request.session.currency}}
+                                        </h4>
                                     </td>
                                 </tr>
                                 <tr>
@@ -236,7 +246,9 @@
                                         <h6 class="text-muted">Total</h6>
                                     </td>
                                     <td class="cart_total_amount">
-                                        <h4 class="text-brand text-end">{{request.session.currency}}{{total|floatformat:"2"|currency:request.session.currency}}</h4>
+                                        <h4 class="text-brand text-end">
+                                            {{request.session.currency}}{{total|floatformat:"2"|currency:request.session.currency}}
+                                        </h4>
                                     </td>
                                 </tr>
                             </tbody>

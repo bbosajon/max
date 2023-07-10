@@ -196,7 +196,9 @@
                                         <h6 class="text-muted pl-20 pr-20">x {{item.quantity }}</h6>
                                     </td>
                                     <td>
-                                        <h4 class="text-brand">{{request.session.currency}}{% widthratio item.price|currency:request.session.currency  1 item.quantity%}</h4>
+                                        <h4 class="text-brand">
+                                            {{request.session.currency}}{% widthratio item.price|currency:request.session.currency  1 item.quantity%}
+                                        </h4>
                                     </td>
                                 </tr>
                                 {%endfor%}
@@ -296,14 +298,16 @@
                         {% if RAZORPAY_KEY_ID %}   
                         <div class="custome-radio">
                             <input class="form-check-input" required="" type="radio" name="payment_option" id="exampleRadios3" >
-                            <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#bankTranfer" aria-controls="bankTranfer"><img width="90" height="15" src="{% static 'assets/imgs/theme/icons/razorpay-logo.5cdb58df.svg'%}" alt="razorpay"></label>
+                            <label class="form-check-label" for="exampleRadios3" data-bs-toggle="collapse" data-target="#bankTranfer" aria-controls="bankTranfer">
+                                <img width="90" height="15" src="{% static 'assets/imgs/theme/icons/razorpay-logo.5cdb58df.svg'%}" alt="razorpay"></label>
                             
                         </div> 
                         {% endif %} 
                         {% if api_key_paymob %}   
                         <div class="custome-radio">
                             <input class="form-check-input" required="" type="radio" name="payment_option" id="paymob" >
-                            <label class="form-check-label" for="paymob" data-bs-toggle="collapse" data-target="#paymob" aria-controls="paymob"><img width="90" height="15" src="{% static 'assets/imgs/theme/icons/paymobLogo.png' %}" alt="paymob"></label>
+                            <label class="form-check-label" for="paymob" data-bs-toggle="collapse" data-target="#paymob" aria-controls="paymob">
+                                <img width="90" height="15" src="{% static 'assets/imgs/theme/icons/paymobLogo.png' %}" alt="paymob"></label>
                             
                         </div> 
                         {% endif %}

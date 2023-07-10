@@ -22,6 +22,7 @@ window.onload = function () {
             },
             success: function (response) {
                 const data = response.data;
+                console.log(data)
 
                 const maxSize = response.max
                 emptyBox.classList.add("not-visible")
@@ -37,6 +38,7 @@ window.onload = function () {
 
 
                         data.map(order => {
+                            console.log(order)
                             let is_finished = order.is_finished
                             let d = new Date(order.order_date);
                             let amount = Number(order.amount).toFixed(2)
@@ -47,10 +49,12 @@ window.onload = function () {
                             else {
                                 is_finished = "No"
                             }
+                            let quantity = order.quantity;
                             ordersList.innerHTML += `   <tr>
                             <td>#${order.id}</td>
                             <td>${d.toDateString()}</td>
-                            <td>$${amount} for 2 item</td>
+                            
+                            <td>$${amount} for ${quantity} item${quantity !== 1 ? 's' : ''}</td>
                             
                             <td>${is_finished}</td>
                             <td></td>

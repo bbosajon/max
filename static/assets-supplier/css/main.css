@@ -243,7 +243,7 @@ table .form-check {
 }
 
 .text-brand {
-  color: #3BB77E !important;
+  color: #000 !important;
 }
 
 .bg-primary {
@@ -255,7 +255,7 @@ table .form-check {
 }
 
 .text-primary {
-  color: #3BB77E !important;
+  color: #000 !important;
 }
 
 .bg-primary-light {
@@ -263,7 +263,7 @@ table .form-check {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  background-color: #3BB77E;
+  background-color: #000;
 }
 
 .screen-overlay {
@@ -547,7 +547,7 @@ b {
 }
 
 .menu-aside .menu-item.active .icon {
-  color: #3BB77E;
+  color: #000;
 }
 
 .menu-aside .menu-item.active .menu-link {
@@ -555,7 +555,7 @@ b {
 }
 
 .menu-aside .menu-item.active .submenu a.active {
-  color: #3BB77E !important;
+  color: #000 !important;
 }
 
 .menu-aside .menu-link {

@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-%eckd70i##mznm!a55p^yb&3unlw3!r)d3_g*=1zrx$_*_hy^5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*", "572d-156-209-45-224.ngrok.io",
-                 "www.572d-156-209-45-224.ngrok.io", "127.0.0.1", "127.0.0.1:8000"]
+ALLOWED_HOSTS = ["*", "maxmall.azurewebsites.net",
+                 "https://maxmall.azurewebsites.net", "127.0.0.1", "127.0.0.1:8000"]
 
 
 # Application definition
@@ -252,7 +252,7 @@ STRIPE_PUBLIC_KEY = "pk_test_51JlJ7SDD5hTsFJUFhRIoCXwo6ubrbkKqzOnyPhM57tf8XeyHYl
 STRIPE_SECRET_KEY = "sk_test_51JlJ7SDD5hTsFJUFx61JYCnJc8bqc3bW9MVaFdgg0g0tMrsHbsaQitwg5HHZ1e7VwyyXciTedv38GISa88VJDmu900Br72Jj3q"
 STRIPE_WEBHOOK_SECRET = "whsec_1xR7X9MTv6Qjfbt7FQCZh5EMGkcFOuge"
 # domain EX: example.com
-YOUR_DOMAIN = "ed49-156-201-174-181.eu.ngrok.io"
+YOUR_DOMAIN = "https://maxmall.azurewebsites.net/orders/webhook/"
 # very important
 # Set your Endpoint_URL in your stripe account WEBHOOK like this : https://YOUR_DOMAIN/orders/webhook/
 # DEBUG_EMAIL_STRIPE

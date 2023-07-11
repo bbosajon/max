@@ -252,7 +252,7 @@ STRIPE_PUBLIC_KEY = "pk_test_51JlJ7SDD5hTsFJUFhRIoCXwo6ubrbkKqzOnyPhM57tf8XeyHYl
 STRIPE_SECRET_KEY = "sk_test_51JlJ7SDD5hTsFJUFx61JYCnJc8bqc3bW9MVaFdgg0g0tMrsHbsaQitwg5HHZ1e7VwyyXciTedv38GISa88VJDmu900Br72Jj3q"
 STRIPE_WEBHOOK_SECRET = "whsec_1xR7X9MTv6Qjfbt7FQCZh5EMGkcFOuge"
 # domain EX: example.com
-YOUR_DOMAIN = "https://maxmall.azurewebsites.net/orders/webhook/"
+YOUR_DOMAIN = "https://maxmall.azurewebsites.net/"
 # very important
 # Set your Endpoint_URL in your stripe account WEBHOOK like this : https://YOUR_DOMAIN/orders/webhook/
 # DEBUG_EMAIL_STRIPE

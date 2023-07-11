@@ -64,7 +64,7 @@ def add_to_cart(request):
             if request.user.is_authenticated and not request.user.is_anonymous:
                 order = Order.objects.filter(
                     user=request.user, is_finished=False).first()
-                print("order: ", order)
+                # print("order: ", order)
             else:
                 cart_id = request.session.get('cart_id')
                 order = Order.objects.all().filter(id=cart_id, is_finished=False)
@@ -74,6 +74,8 @@ def add_to_cart(request):
 
         if not Product.objects.all().filter(id=product_id).exists():
             return HttpResponse(f"this product not found !")
+        
+       
 
         if order:
             if request.user.is_authenticated and not request.user.is_anonymous:
@@ -90,6 +92,8 @@ def add_to_cart(request):
                 item_supplier = OrderDetailsSupplier.objects.get(
                     order=old_orde, product=product)
                 # for i in items:
+                # remaining_quantity = product.available - item.quantity
+                # print(remaining_quantity)
                 if item.quantity >= product.available:
                     qyt = item.quantity
                     # i.quantity = int(qyt)
@@ -351,6 +355,7 @@ def add_to_cart(request):
             new_order.sub_total = f_total
             new_order.weight = weight
             new_order.amount = total
+
             new_order.save()
             # code for total amount supplier order
             order_details__supplier = OrderDetailsSupplier.objects.all().filter(
@@ -680,10 +685,10 @@ def payment(request):
     else:
         PUBLIC_KEY = settings.STRIPE_PUBLIC_KEY
 
-    if settings.RAZORPAY_KEY_ID == "" or settings.RAZORPAY_KEY_ID == None:
-        RAZORPAY_KEY_ID = False
-    else:
-        RAZORPAY_KEY_ID = settings.RAZORPAY_KEY_ID
+    # if settings.RAZORPAY_KEY_ID == "" or settings.RAZORPAY_KEY_ID == None:
+    #     RAZORPAY_KEY_ID = False
+    # else:
+    #     RAZORPAY_KEY_ID = settings.RAZORPAY_KEY_ID
 
     if settings.API_KEY == "" or settings.API_KEY == None:
         api_key_paymob = False
@@ -867,7 +872,7 @@ def payment(request):
                 "blance": blance,
                 "order_amount": order_amount,
                 # "RAZORPAY_KEY_ID": RAZORPAY_KEY_ID,
-                # 'RAZORPAY_order_id': payment,
+                'RAZORPAY_order_id': payment,
                 "image": image,
                 "api_key_paymob": api_key_paymob,
                 "paypal_client_id": paypal_client_id,
@@ -1424,7 +1429,7 @@ def create_checkout_session(request):
             line_items=[
                 {
                     'price_data': {
-                        'currency': 'usd',
+                        'currency': 'ugx',
                         'unit_amount': int(float(order.amount)*100),
                         'product_data': {
                             'name': f"Order Number :{order.id}",

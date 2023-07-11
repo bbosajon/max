@@ -49,7 +49,7 @@ window.onload = function () {
                                     <div class="vendor-img-action-wrap">
                                         <div class="vendor-img">
                                             <a href="/vendor-details/${vendor.slug}">
-                                                <img class="default-img" src="/media/${vendor.image}" width="144" height="144" style="width:144px;height:144px;" alt="" />
+                                                <img class="default-img" src="https://maxmedia.blob.core.windows.net/media/${vendor.image}" width="144" height="144" style="width:144px;height:144px;" alt="" />
                                             </a>
                                         </div>
                                         <div class="product-badges product-badges-position product-badges-mrg">

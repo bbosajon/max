@@ -65,8 +65,8 @@ window.onload = function () {
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="/product-details/${product.PRDSlug}">
-                                            <img class="default-img" width="182" height="182" style="width:182px;height:182px;" src="/media/${product.product_image}" alt="${product.product_name}" />
-                                            <img class="hover-img" width="182" height="182" style="width:182px;height:182px;" src="/media/${product.product_image}" alt="${product.product_name}" />
+                                            <img class="default-img" width="182" height="182" style="width:182px;height:182px;" src="https://maxmedia.blob.core.windows.net/media/${product.product_image}" alt="${product.product_name}" />
+                                            <img class="hover-img" width="182" height="182" style="width:182px;height:182px;" src="https://maxmedia.blob.core.windows.net/media/${product.product_image}" alt="${product.product_name}" />
                                         </a>
                                     </div>
                                     <div class="product-action-1">

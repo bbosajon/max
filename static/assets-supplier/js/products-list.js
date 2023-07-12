@@ -65,7 +65,7 @@ window.onload = function () {
                             <div class="col-lg-4 col-sm-4 col-8 flex-grow-1 col-name">
                                 <a class="itemside" href="/product-details/${product.PRDSlug}">
                                     <div class="left">
-                                        <img src="/media/${product.product_image}" width="100" height="100"   style="width:100px;height:100px;"  class="img-sm img-thumbnail" alt="${product.product_name}" />
+                                        <img src="https://maxmedia.blob.core.windows.net/media/${product.product_image}" width="100" height="100"   style="width:100px;height:100px;"  class="img-sm img-thumbnail" alt="${product.product_name}" />
                                     </div>
                                     <div class="info">
                                         <h6 class="mb-0">${textSlice}</h6>

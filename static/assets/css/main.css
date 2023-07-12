@@ -4443,12 +4443,12 @@ table .product-thumbnail img {
 }
 
 .product-cart-wrap .product-content-wrap .product-category a:hover {
-  color: #3BB77E;
+  color: #3cb17b;
 }
 
 .product-cart-wrap .product-content-wrap h2 {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 
@@ -4465,9 +4465,9 @@ table .product-thumbnail img {
 }
 
 .product-cart-wrap .product-content-wrap .product-price span {
-  font-size: 18px;
-  font-weight: bold;
-  color: #3BB77E;
+  font-size: 15px;
+  font-weight: 450;
+  color: #000000;
 }
 
 .product-cart-wrap .product-content-wrap .product-price span.new-price {
@@ -7486,9 +7486,10 @@ h6.post-title {
   max-width: 25px;
 }
 
+
 .header-action-2 .header-action-icon-2>a span {
   font-size: 14px;
-  color: #7E7E7E;
+  color: #000000;
 }
 
 .header-action-2 .header-action-icon-2>a span.pro-count {
@@ -7673,7 +7674,7 @@ h6.post-title {
 }
 
 .header-action-2 .header-action-icon-2>a span.pro-count.blue {
-  background-color: #3BB77E;
+  background-color: #000000;
 }
 
 .header-action-2 .header-action-icon-2:hover>a {

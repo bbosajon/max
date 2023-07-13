@@ -58,7 +58,7 @@ tzdata==2022.1
 ua-parser==0.10.0
 urllib3==1.26.8
 user-agents==2.2.0
-virtualenv==20.23.1
+virtualenv==20.4.3
 webdriver-manager==3.4.2
 whitenoise==6.1.0
 wrapt==1.12.1

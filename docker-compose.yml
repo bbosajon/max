@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=maxstorage.postgres.database.azure.com
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=max
+      - POSTGRES_USER=bbosa
+      - POSTGRES_PASSWORD=Neonah@100
+      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=maxmedia;AccountKey=qIcKgw0mM5/ghHe4Zg9eDhttwpgVQVjTkuUr1NodHvQheaSRpxGbeHSAgQ4/5vWjXpC2B44CemR/+ASt8TTqYw==;EndpointSuffix=core.windows.net
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=max
+      - POSTGRES_USER=bbosa
+      - POSTGRES_PASSWORD=Neonah@100

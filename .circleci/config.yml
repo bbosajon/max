@@ -13,7 +13,7 @@ jobs:
       - image: bbosajon/max-imagedocker
         auth:
           username: bbosajon
-          password: Neonah@100
+          password: dckr_pat_BZoQr54PALhA-vF_1Ip9bEhEplA
       
      
     # Add steps to the job

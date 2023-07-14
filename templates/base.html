@@ -316,7 +316,7 @@
 											</div>
 											<div class="shopping-cart-title">
 												<h4><a href="{% url 'products:product-details' order.product.PRDSlug %}">{{order.product.product_name|truncatechars:17}}</a></h4>
-												<h4><span>{{order.quantity}} × </span>${{order.price}}</h4>
+												<h4><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price}}</h4>
 											</div>
 											<div class="shopping-cart-delete">
 												<a href="{% url 'orders:remove-item' order.id  %}"><i class="fi-rs-cross-small"></i></a>
@@ -327,7 +327,7 @@
 									<div class="shopping-cart-footer">
 										<div class="shopping-cart-total">
 											{% if order_context.amount%}
-											 <h4>Total <span>${{order_context.amount}}</span></h4> 
+											 <h4>Total <span>{{request.session.currency}}{{order_context.amount}}</span></h4> 
 											{%endif%}
 										</div>
 										<div class="shopping-cart-button">
@@ -518,7 +518,7 @@
 										</div>
 										<div class="shopping-cart-title">
 											<h4><a href="{% url 'products:product-details' order.product.PRDSlug %}">{{order.product.product_name|truncatechars:17}}</a></h4>
-											<h3><span>{{order.quantity}} × </span>${{order.price}}</h3>
+											<h3><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price}}</h3>
 										</div>
 										<div class="shopping-cart-delete">
 											<a href="{% url 'orders:remove-item' order.id  %}"><i class="fi-rs-cross-small"></i></a>
@@ -530,7 +530,7 @@
 								<div class="shopping-cart-footer">
 									<div class="shopping-cart-total">
 										{% if order_context.amount%}
-											<h4>Total <span>${{order_context.amount}}</span></h4> 
+											<h4>Total <span>{{request.session.currency}}{{order_context.amount}}</span></h4> 
 										{%endif%}
 									</div>
 									<div class="shopping-cart-button">
@@ -648,7 +648,7 @@
 					{%endif%}
 				</div>
 				<div class="single-mobile-header-info">
-					<a href="#"><i class="fi-rs-headphones"></i>(+01) - 2345 - 6789 </a>
+					<a href="#"><i class="fi-rs-headphones"></i>(+256) - 75614 - 6085 </a>
 				</div>
 			</div>
 			<div class="mobile-social-icon mb-50">
@@ -661,7 +661,7 @@
 				<a href="{{link.youtube}}"><img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg'%}" alt="" /></a>
 				{%endfor%}
 			</div>
-			<div class="site-copyright">Copyright 2022 © store. All rights reserved. Powered by apexcode.info.</div>
+			<div class="site-copyright">Copyright 2023 © store. All rights reserved. Powered by katwe Colabs.</div>
 		</div>
 	</div>
 </div>
@@ -671,7 +671,7 @@
 </div>
 <!--End header-->
 		{%block body%}
-
+<!-- footer section -->
 		{%endblock body%}
 
         <footer class="main">
@@ -708,7 +708,7 @@
                                 </div>
                                 <div class="banner-text">
                                     <h3 class="icon-box-title">Best prices & offers</h3>
-                                    <p>Orders $50 or more</p>
+                                    <p>Orders ugx500k or more</p>
                                 </div>
                             </div>
                         </div>
@@ -822,8 +822,8 @@
                         <h4 class="widget-title">Install App</h4>
                         <p class="">From App Store or Google Play</p>
                         <div class="download-app">
-                            <a href="#" class="hover-up mb-sm-2 mb-lg-0"><img class="active" src="{% static 'assets/imgs/theme/app-store.jpg'%}" alt="" /></a>
-                            <a href="#" class="hover-up mb-sm-2"><img src="{% static 'assets/imgs/theme/google-play.jpg'%}" alt="" /></a>
+                            <a href="" class="hover-up mb-sm-2 mb-lg-0"><img class="active" src="{% static 'assets/imgs/theme/app-store.jpg'%}" alt="" /></a>
+                            <a href="" class="hover-up mb-sm-2"><img src="{% static 'assets/imgs/theme/google-play.jpg'%}" alt="" /></a>
                         </div>
                         <p class="mb-20">Secured Payment Gateways</p>
                         <img class="" src="{% static 'assets/imgs/theme/payment-method.png'%}" alt="" />
@@ -836,7 +836,7 @@
                         <div class="footer-bottom"></div>
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6">
-                        <p class="font-sm mb-0">&copy; 2022, <strong class="text-brand">{{site_info.site_name}}</strong> -  All rights reserved</p>
+                        <p class="font-sm mb-0">&copy; 2023, <strong class="text-brand">{{site_info.site_name}}</strong> -  All rights reserved</p>
                     </div>
                     <div class="col-xl-4 col-lg-6 text-center d-none d-xl-block">
 						{% for number_obj in support_number|slice:"0:2"%}
@@ -857,7 +857,7 @@
                             <a href="{{link.youtube}}"><img src="{% static 'assets/imgs/theme/icons/icon-youtube-white.svg'%}" alt="" /></a>
 							{%endfor%}
                         </div>
-                        <p class="font-sm">Up to 15% discount on your first subscribe</p>
+                        <p class="font-sm">Up to 10% discount on your first subscribe</p>
                     </div>
                 </div>
             </div>

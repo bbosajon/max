@@ -13,7 +13,7 @@ jobs:
       - image: bbosajon/max-imagedocker
         auth:
           username: bbosajon
-          password: $DOCKERHUB_PASSWORD 
+          password: Neonah@100 
       
      
     # Add steps to the job

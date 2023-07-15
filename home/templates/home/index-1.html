@@ -18,7 +18,8 @@
 
                                 {% for categori in super_category|slice:":10"%}
                                  <li style="padding-top:30px;">
-                                     <a href="{% url 'categories:super-category' categori.slug%}"> <img src="{%if categori.category_image %}{{categori.category_image.url}} {%else%} {% static 'assets/imgs/theme/icons/category-1.svg'%} {%endif%}" alt="" />{{categori.name}}</a>
+                                     <a href="{% url 'categories:super-category' categori.slug%}"> 
+                                        <img src="{%if categori.category_image %}{{categori.category_image.url}} {%else%} {% static 'assets/imgs/theme/icons/category-1.svg'%} {%endif%}" alt="" />{{categori.name}}</a>
                                  </li>
                                  {% endfor %}
                                
@@ -198,11 +199,11 @@
                                          
                                      </div>
                                      <div class="product-badges product-badges-position product-badges-mrg">
-                                         {%if product.promotional == "Hot"%}
+                                         {% if product.promotional == "Hot" %}
                                          <span class="hot">Hot</span>
-                                         {%else%}
+                                         {% else %}
                                          <span class="new">New</span>
-                                         {%endif%}
+                                         {% endif %}
                                      </div>
                                  </div>
                                  <div class="product-content-wrap">
@@ -334,7 +335,7 @@
                                                  <div class="product-rating" style="width: {{product.feedbak_average}}%"></div>
                                              </div>
                                              <div class="product-price mt-10">
-                                                 <span>${{product.PRDPrice|currency:request.session.currency}} </span>
+                                                 <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}} </span>
                                                 {%if product.PRDDiscountPrice%}
                                                  <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
                                                  {%endif%}

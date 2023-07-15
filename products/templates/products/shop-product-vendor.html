@@ -9,7 +9,23 @@
         <div class="container">
             <div class="breadcrumb">
                 <a href="{%url 'home:index'%}" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
-                <span></span> <a href="{% url 'categories:super-category' product_detail.product_supercategory.slug%}">{{product_detail.product_supercategory}}</a> <span></span> Seeds of Change Organic
+                <span>
+                    </span> 
+                        <a href="{% url 'categories:super-category' product_detail.product_supercategory.slug%}">
+                            {{product_detail.product_supercategory}}
+                        </a> 
+                    <span>
+                </span>
+                </span> 
+                    <a href="{% url 'categories:main-category' product_detail.product_maincategory.slug%}">
+                        {{product_detail.product_maincategory}}
+                    </a> 
+                <span>
+                </span> 
+                <a href="{% url 'categories:sub-category' product_detail.product_subcategory.slug%}">
+                    {{product_detail.product_subcategory}}
+                </a> 
+            <span>
             </div>
         </div>
     </div>

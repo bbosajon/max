@@ -46,7 +46,7 @@ window.onload = function () {
                     data.map(product => {
                         let discount = ""
                         if (product.PRDDiscountPrice > 0) {
-                            discount = `$${product.PRDDiscountPrice}`
+                            discount = `ugx${product.PRDDiscountPrice}`
                         }
 
                         if (product.promotional == "New") {
@@ -93,7 +93,7 @@ window.onload = function () {
                                             </div>
                                             <div class="product-card-bottom">
                                                 <div class="product-price">
-                                                    <span>$${product.PRDPrice}</span>
+                                                    <span>ugx${product.PRDPrice}</span>
                                                     <span class="old-price">${discount}</span>
                                                 </div>
                                                 <div class="add-cart">

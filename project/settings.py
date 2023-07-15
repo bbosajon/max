@@ -276,10 +276,16 @@ ARAMEX_PRODUCTTYPE = "PPX"
 
 
 # #Smtp Email for recovery password
-EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
-SENDGRID_API_KEY = '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'
-SENDGRID_SANDBOX_MODE_IN_DEBUG = False
-EMAIL_SENDGRID = "selemhamed2016@gmail.com"
+# EMAIL_BACKEND = 'sendgrid_backend.SendgridBackend'
+# SENDGRID_API_KEY = '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'
+# SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+# EMAIL_SENDGRID = "selemhamed2016@gmail.com"
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'steinsjb@gmail.com'
+EMAIL_HOST_PASSWORD = 'mfplnjgjouhysrej'
+EMAIL_USE_TLS = True
 
 
 # razorpay account ###

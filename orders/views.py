@@ -1391,7 +1391,7 @@ def payment_cash(request):
                 'Great! Order ID{}. has been successfully purchased'.format(
                     old_orde.id),
                 ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                f'{settings.EMAIL_SENDGRID}',
+                f'{settings.EMAIL_HOST_USER}',
                 [f'{payment_method.Email_Address}'],
                 fail_silently=False,
             )
@@ -1454,7 +1454,7 @@ def create_checkout_session(request):
         send_mail(
             'Order  has not been completed , ',
             ' {}'.format(e),
-            f'{settings.EMAIL_SENDGRID}',
+            f'{settings.EMAIL_HOST_USER}',
             [f'{settings.DEBUG_EMAIL}'],
             fail_silently=False,
         )
@@ -1477,7 +1477,7 @@ def my_webhook_view(request):
         send_mail(
             'Order  has not been completed , Invalid payload',
             ' {}'.format(e),
-            f'{settings.EMAIL_SENDGRID}',
+            f'{settings.EMAIL_HOST_USER}',
             [f'{settings.DEBUG_EMAIL}'],
             fail_silently=False,
         )
@@ -1488,7 +1488,7 @@ def my_webhook_view(request):
         send_mail(
             'Order  has not been completed , Invalid signature',
             ' {}'.format(e),
-            f'{settings.EMAIL_SENDGRID}',
+            f'{settings.EMAIL_HOST_USER}',
             [f'{settings.DEBUG_EMAIL}'],
             fail_silently=False,
         )
@@ -1730,7 +1730,7 @@ def my_webhook_view(request):
                         'Great! Order ID{}. has been successfully purchased'.format(
                             order_id),
                         ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                        f'{settings.EMAIL_SENDGRID}',
+                        f'{settings.EMAIL_HOST_USER}',
                         [f'{customer_email}'],
                         fail_silently=False,
                     )
@@ -1969,7 +1969,7 @@ def my_webhook_view(request):
                     'Order ID {}. has been successfully purchased'.format(
                         order_id),
                     ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                    f'{settings.EMAIL_SENDGRID}',
+                    f'{settings.EMAIL_HOST_USER}',
                     [f'{customer_email}'],
                     fail_silently=False,
                 )
@@ -1987,7 +1987,7 @@ def my_webhook_view(request):
             send_mail(
                 'Order NO. {}. has not been completed , payment_failed'.format(
                     order_id),
-                f'{settings.EMAIL_SENDGRID}',
+                f'{settings.EMAILEMAIL_HOST_USER_SENDGRID}',
                 [f'{customer_email}'],
                 fail_silently=False,
             )
@@ -2331,7 +2331,7 @@ def my_webhook_view_paymob(request, *args, **kwargs):
                             'Great! Order ID{}. has been successfully purchased'.format(
                                 old_orde.id),
                             ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                            f'{settings.EMAIL_SENDGRID}',
+                            f'{settings.EMAIL_HOST_USER}',
                             [f'{payment_method.Email_Address}'],
                             fail_silently=False,
                         )
@@ -2595,7 +2595,7 @@ def verify_payment_razorpay(request):
                         'Great! Order ID{}. has been successfully purchased'.format(
                             order_id),
                         ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                        f'{settings.EMAIL_SENDGRID}',
+                        f'{settings.EMAIL_HOST_USER}',
                         [f'{payment_method.Email_Address}'],
                         fail_silently=False,
                     )
@@ -2854,7 +2854,7 @@ def verify_payment_paypal(request):
                         'Great! Order ID{}. has been successfully purchased'.format(
                             order_id),
                         ' Congratulations, you have made your order, This order will be delivered to you soon.',
-                        f'{settings.EMAIL_SENDGRID}',
+                        f'{settings.EMAIL_HOST_USER}',
                         [f'{payment_method.Email_Address}'],
                         fail_silently=False,
                     )
@@ -2900,7 +2900,7 @@ def success(request):
         #     'Order No {}. has been successfully purchased'.format(
         #         order_id),
         #     ' we will work to complete your order from our side.',
-        #     f'{settings.EMAIL_SENDGRID}',
+        #     f'{settings.EMAIL_HOST_USER}',
         #     [f'{payment_info.Email_Address}', ],
         #     fail_silently=False,
         # )

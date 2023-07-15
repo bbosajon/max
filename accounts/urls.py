@@ -21,7 +21,7 @@ urlpatterns = [
 
 
     path('password-reset/', auth_views.PasswordResetView.as_view(form_class=CaptchaPasswordResetForm, template_name='accounts/auth/password_reset.html', email_template_name='accounts/auth/password_reset_email.html',
-                                                                 from_email=settings.EMAIL_SENDGRID,
+                                                                 from_email=settings.EMAIL_HOST_USER,
                                                                  html_email_template_name='accounts/auth/password_reset_email.html',
                                                                  subject_template_name='accounts/auth/password_reset_subject.txt',
                                                                  success_url=reverse_lazy('accounts:password_reset_done')), name='password_reset'),

@@ -211,7 +211,7 @@ def product_rating(request):
                 # send_mail(
                 #     "You received a message from {}".format(name),
                 #     f'{message}',
-                #     f'{settings.EMAIL_SENDGRID}',
+                #     f'{settings.EMAIL_HOST_USER}',
                 #     [f'{email}'],
                 #     fail_silently=False,
                 # )
@@ -245,7 +245,7 @@ def product_rating(request):
                 # send_mail(
                 #     "You received a message from {}".format(name),
                 #     f'{message}',
-                #     f'{settings.EMAIL_SENDGRID}',
+                #     f'{settings.EMAIL_HOST_USER}',
                 #     [f'{email}'],
                 #     fail_silently=False,
                 # )

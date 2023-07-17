@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%eckd70i##mznm!a55p^yb&3unlw3!r)d3_g*=1zrx$_*_hy^5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*", "maxmall.azurewebsites.net",
                  "https://maxmall.azurewebsites.net", "127.0.0.1", "127.0.0.1:8000"]
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'adminlte3',
     # Optional: Django admin theme (must be before django.contrib.admin)
     'adminlte3_theme',
+    # 'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,6 +65,7 @@ INSTALLED_APPS = [
     'pages',
     'payments',
     'storages',
+    # 'ads_txt',
 ]
 
 MIDDLEWARE = [

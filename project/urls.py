@@ -37,6 +37,7 @@ urlpatterns = [
     path('', include('contact.urls', namespace='contact')),
     path('', include('pages.urls', namespace='pages')),
     path('currencies/', include('currencies.urls')),
+    # url(r'^ads\.txt', include('ads_txt.urls')),
 
 ]
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

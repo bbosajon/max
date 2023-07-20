@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% load static %}
 {% load currency %}
 {% currency_context %}
@@ -82,7 +83,7 @@
                                     <h4 class="text-brand">{{item.weight }}KG</h4>
                                 </td>
                                 <td class="price" data-title="Price">
-                                    <h4 class="text-body">{{request.session.currency }} {{item.price|currency:request.session.currency  }} </h4>
+                                    <h4 class="text-body">{{request.session.currency }} {{item.price|currency:request.session.currency|intcomma }} </h4>
                                 </td>
                                 <td class="text-center detail-info" data-title="Stock">
                                     {% comment %} <div class="detail-extralink mr-15">
@@ -205,7 +206,7 @@
                                     </td>
                                     <td class="cart_total_amount">
                                         <h4 class="text-brand text-end">
-                                            {{request.session.currency}} {{f_total|currency:request.session.currency}}
+                                            {{request.session.currency}} {{f_total|currency:request.session.currency|intcomma}}
                                         </h4>
                                     </td>
                                 </tr>
@@ -235,7 +236,7 @@
                                         <h6 class="text-muted">Coupon</h6>
                                     </td>
                                     <td class="cart_total_amount">
-                                        <h5 class="text-heading text-end">{{code}} <span> -{{request.session.currency}}{{value|floatformat:"2"|currency:request.session.currency}}</h4</td> </tr> <tr>
+                                        <h5 class="text-heading text-end">{{code}} <span> -{{request.session.currency}}{{value|floatformat:"2"|currency:request.session.currency|intcomma}}</h4</td> </tr> <tr>
                                     <td scope="col" colspan="2">
                                         <div class="divider-2 mt-10 mb-10"></div>
                                     </td>
@@ -247,7 +248,7 @@
                                     </td>
                                     <td class="cart_total_amount">
                                         <h4 class="text-brand text-end">
-                                            {{request.session.currency}}{{total|floatformat:"2"|currency:request.session.currency}}
+                                            {{request.session.currency}}{{total|floatformat:"2"|currency:request.session.currency|intcomma}}
                                         </h4>
                                     </td>
                                 </tr>

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% load static %}
 
 
@@ -178,7 +179,7 @@
                             </div>
                             <div class="content pt-10">
                                 <h5><a href="{% url 'products:product-details' new_product.PRDSlug%}">{{new_product.product_name|truncatechars:14}}</a></h5>
-                                <p class="price mb-0 mt-5">{{request.session.currency}} {{new_product.PRDPrice}}</p>
+                                <p class="price mb-0 mt-5">{{request.session.currency}} {{new_product.PRDPrice|intcomma}}</p>
                                 <div class="product-rate">
                                     <div class="product-rating" style="width: {{new_product.feedbak_average}}%"></div>
                                 </div>

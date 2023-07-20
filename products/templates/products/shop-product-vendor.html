@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% load static %}
 {% load currency %}
 {% currency_context %}
@@ -159,13 +160,13 @@
                                         <div class="clearfix product-price-cover">
                                             <div class="product-price primary-color float-left">
                                                 <span class="current-price text-brand">
-                                                    {{request.session.currency}}{{product_detail.PRDPrice|currency:request.session.currency}}
+                                                    {{request.session.currency}}{{product_detail.PRDPrice|currency:request.session.currency|intcomma}}
                                                 </span>
                                                 <span>
                                                     {% comment %} <span class="save-price font-md color3 ml-15">26% Off</span> {% endcomment %}
                                                     {% if product_detail.PRDDiscountPrice%}
                                                     <span class="old-price font-md ml-15">
-                                                        {{request.session.currency}}{{product_detail.PRDDiscountPrice|currency:request.session.currency}}
+                                                        {{request.session.currency}}{{product_detail.PRDDiscountPrice|currency:request.session.currency|intcomma }}
                                                     </span>
                                                     {%endif%}
                                                 </span>
@@ -255,7 +256,7 @@
                                                     <tr class="stand-up">
                                                         <th>Price</th>
                                                         <td>
-                                                            <p>{{request.session.currency}} {{product_detail.PRDPrice|currency:request.session.currency}}</p>
+                                                            <p>{{request.session.currency}} {{product_detail.PRDPrice|currency:request.session.currency|intcomma}}</p>
                                                         </td>
                                                     </tr>
                                                     <tr class="folded-wo-wheels">
@@ -568,9 +569,9 @@
                                                         <span> </span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>{{request.session.currency}}{{related_product.PRDPrice|currency:request.session.currency}} </span>
+                                                        <span>{{request.session.currency}}{{related_product.PRDPrice|currency:request.session.currency|intcomma}} </span>
                                                         {% if related_product.PRDDiscountPrice%}
-                                                        <span class="old-price">{{request.session.currency}}{{related_product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                                        <span class="old-price">{{request.session.currency}}{{related_product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                                         {%endif%}
                                                     </div>
                                                 </div>
@@ -626,9 +627,9 @@
                                                         <span> </span>
                                                     </div>
                                                     <div class="product-price">
-                                                        <span>{{request.session.currency}}{{supplier_Product.PRDPrice|currency:request.session.currency}}</span>
+                                                        <span>{{request.session.currency}}{{supplier_Product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                                         {% if supplier_Product.PRDDiscountPrice%}
-                                                        <span class="old-price">{{request.session.currency}}{{supplier_Product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                                        <span class="old-price">{{request.session.currency}}{{supplier_Product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                                         {%endif%}
                                                     </div>
                                                 </div>

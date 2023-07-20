@@ -1,4 +1,5 @@
 {% load static%}
+{% load humanize %}
 {% load cart_template_tags%}
 {% load currency %}
 {% currency_context %}
@@ -351,7 +352,7 @@
 											</div>
 											<div class="shopping-cart-title">
 												<h4><a href="{% url 'products:product-details' order.product.PRDSlug %}">{{order.product.product_name|truncatechars:17}}</a></h4>
-												<h4><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price}}</h4>
+												<h4><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price|intcomma}}</h4>
 											</div>
 											<div class="shopping-cart-delete">
 												<a href="{% url 'orders:remove-item' order.id  %}"><i class="fi-rs-cross-small"></i></a>
@@ -362,7 +363,7 @@
 									<div class="shopping-cart-footer">
 										<div class="shopping-cart-total">
 											{% if order_context.amount%}
-											 <h4>Total <span>{{request.session.currency}}{{order_context.amount}}</span></h4> 
+											 <h4>Total <span>{{request.session.currency}}{{order_context.amount|intcomma}}</span></h4> 
 											{%endif%}
 										</div>
 										<div class="shopping-cart-button">
@@ -553,7 +554,7 @@
 										</div>
 										<div class="shopping-cart-title">
 											<h4><a href="{% url 'products:product-details' order.product.PRDSlug %}">{{order.product.product_name|truncatechars:17}}</a></h4>
-											<h3><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price}}</h3>
+											<h3><span>{{order.quantity}} × </span>{{request.session.currency}}{{order.price|intcomma}}</h3>
 										</div>
 										<div class="shopping-cart-delete">
 											<a href="{% url 'orders:remove-item' order.id  %}"><i class="fi-rs-cross-small"></i></a>
@@ -565,7 +566,7 @@
 								<div class="shopping-cart-footer">
 									<div class="shopping-cart-total">
 										{% if order_context.amount%}
-											<h4>Total <span>{{request.session.currency}}{{order_context.amount}}</span></h4> 
+											<h4>Total <span>{{request.session.currency}}{{order_context.amount|intcomma}}</span></h4> 
 										{%endif%}
 									</div>
 									<div class="shopping-cart-button">

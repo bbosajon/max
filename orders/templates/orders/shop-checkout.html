@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load humanize %}
 {% load static %}
 {% load currency %}
 {% currency_context %}
@@ -210,7 +211,7 @@
                                     </td>
                                    
                                     <td>
-                                        <h4 class="text-brand">{{request.session.currency}}{{order.sub_total|currency:request.session.currency}}</h4>
+                                        <h4 class="text-brand">{{request.session.currency}}{{order.sub_total|currency:request.session.currency|intcomma}}</h4>
                                     </td>
                                 </tr>
                                 <tr>
@@ -246,7 +247,7 @@
                                     </td>
                                    
                                     <td>
-                                        <h5 class="text-brand">-{{request.session.currency}}{{order.discount|floatformat:"2"|currency:request.session.currency}}</h5>
+                                        <h5 class="text-brand">-{{request.session.currency}}{{order.discount|floatformat:"2"|currency:request.session.currency|intcomma}}</h5>
                                     </td>
                                 </tr>
                                 {%endif%}
@@ -259,7 +260,7 @@
                                     </td>
                                    
                                     <td>
-                                        <h4 class="text-brand">+{{request.session.currency}}{{order.shipping|floatformat:"2"|currency:request.session.currency}}</h4>
+                                        <h4 class="text-brand">+{{request.session.currency}}{{order.shipping|floatformat:"2"|currency:request.session.currency|intcomma}}</h4>
                                     </td>
                                 </tr>
                                 {%endif%}
@@ -271,7 +272,7 @@
                                     </td>
                                    
                                     <td>
-                                        <h4 class="text-brand">{{request.session.currency}}{{order.amount|floatformat:"2"|currency:request.session.currency}}</h4>
+                                        <h4 class="text-brand">{{request.session.currency}}{{order.amount|floatformat:"2"|currency:request.session.currency|intcomma}}</h4>
                                     </td>
                                 </tr>
                             </tbody>

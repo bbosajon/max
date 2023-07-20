@@ -1,4 +1,5 @@
 {%load static%}
+{% load humanize %}
 {% load currency %}
 {% currency_context %}
 
@@ -119,14 +120,14 @@
                                                             <small>SKU: {{item.product.PRDSKU}}</small>
                                                         </div>
                                                     </td>
-                                                    <td class="text-center">{{request.session.currency}} {{item.price|currency:request.session.currency}}</td>
+                                                    <td class="text-center">{{request.session.currency}} {{item.price|currency:request.session.currency|intcomma}}</td>
                                                     <td class="text-center">{{item.quantity}}</td>
                                                     <td class="text-right">{{request.session.currency}} {% widthratio item.price|currency:request.session.currency 1 item.quantity %}</td>
                                                 </tr>
                                                 {%endfor%}
                                                 <tr>
                                                     <td colspan="3" class="text-end f-w-600">SubTotal</td>
-                                                    <td class="text-right">{{request.session.currency}} {{order_success.sub_total|currency:request.session.currency}}</td>
+                                                    <td class="text-right">{{request.session.currency}} {{order_success.sub_total|currency:request.session.currency|intcomma }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" class="text-end f-w-600">Items</td>
@@ -135,7 +136,7 @@
                                                 {% if order_success.coupon%}
                                                 <tr>
                                                     <td colspan="3" class="text-end f-w-600">Coupon({{order_success.coupon}})</td>
-                                                    <td class="text-right">-{{request.session.currency}} {{order_success.discount|floatformat:"2"|currency:request.session.currency}}</td>
+                                                    <td class="text-right">-{{request.session.currency}} {{order_success.discount|floatformat:"2"|currency:request.session.currency|intcomma}}</td>
                                                 </tr>
                                                 {%endif%}
 
@@ -146,7 +147,7 @@
                                                 {%if order_success.shipping%}
                                                 <tr>
                                                     <td colspan="3" class="text-end f-w-600">Shipping</td>
-                                                    <td class="text-right">+{{request.session.currency}} {{order_success.shipping|floatformat:"2"|currency:request.session.currency}}</td>
+                                                    <td class="text-right">+{{request.session.currency}} {{order_success.shipping|floatformat:"2"|currency:request.session.currency|intcomma}}</td>
                                                 </tr>
                                                 {%endif%}
                                                 {% comment %} <tr>
@@ -156,7 +157,7 @@
 
                                                 <tr>
                                                     <td colspan="3" class="text-end f-w-600">Grand Total</td>
-                                                    <td class="text-right f-w-600">{{request.session.currency}} {{order_success.amount|floatformat:"2"|currency:request.session.currency}}</td>
+                                                    <td class="text-right f-w-600">{{request.session.currency}} {{order_success.amount|floatformat:"2"|currency:request.session.currency|intcomma }}</td>
                                                 </tr>
                                             </tbody>
                                         </table>

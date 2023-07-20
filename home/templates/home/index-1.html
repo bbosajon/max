@@ -1,4 +1,5 @@
  {% extends 'base.html' %}
+ {% load humanize %}
  {% load static %}
  {% load currency %}
  {% currency_context %}
@@ -224,9 +225,9 @@
                                      </div>
                                      <div class="product-card-bottom">
                                          <div class="product-price">
-                                             <span>{{request.session.currency}} {{product.PRDPrice|currency:request.session.currency}}</span>
+                                             <span>{{request.session.currency}} {{product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                              {%if product.PRDDiscountPrice%}
-                                             <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                             <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                              {%endif%}
                                          </div>
                                          <div class="add-cart">
@@ -335,9 +336,9 @@
                                                  <div class="product-rating" style="width: {{product.feedbak_average}}%"></div>
                                              </div>
                                              <div class="product-price mt-10">
-                                                 <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}} </span>
+                                                 <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency|intcomma}} </span>
                                                 {%if product.PRDDiscountPrice%}
-                                                 <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                                 <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                                  {%endif%}
                                              </div>
                                              <div class="sold mt-15 mb-15">
@@ -403,9 +404,9 @@
                                  </div>
                                  <div class="product-card-bottom">
                                      <div class="product-price">
-                                         <span>{{request.session.currency}}{{home_ad_deal_time.PRDPrice|currency:request.session.currency}}</span>
+                                         <span>{{request.session.currency}}{{home_ad_deal_time.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                          {% if home_ad_deal_time.PRDDiscountPrice%}
-                                         <span class="old-price">{{request.session.currency}}{{home_ad_deal_time.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                         <span class="old-price">{{request.session.currency}}{{home_ad_deal_time.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                          {%endif %}
                                      </div>
                                      <div class="add-cart">
@@ -445,9 +446,11 @@
                                      <span class="font-small ml-5 text-muted"> ({{product.feedbak_number}})</span>
                                  </div>
                                  <div class="product-price">
-                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}}</span>
+                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                      {%if product.PRDDiscountPrice%}
-                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                     <span class="old-price">
+                                        {{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}
+                                    </span>
                                      {%endif%}
                                  </div>
                              </div>
@@ -474,9 +477,9 @@
                                      <span class="font-small ml-5 text-muted"> ({{product.feedbak_number}})</span>
                                  </div>
                                  <div class="product-price">
-                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}}</span>
+                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                      {%if product.PRDDiscountPrice%}
-                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                      {%endif%}
                                  </div>
                              </div>
@@ -503,9 +506,9 @@
                                      <span class="font-small ml-5 text-muted"> ({{product.feedbak_number}})</span>
                                  </div>
                                  <div class="product-price">
-                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}}</span>
+                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                      {%if product.PRDDiscountPrice%}
-                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                      {%endif%}
                                  </div>
                              </div>
@@ -532,9 +535,9 @@
                                      <span class="font-small ml-5 text-muted"> ({{product.feedbak_number}})</span>
                                  </div>
                                  <div class="product-price">
-                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency}}</span>
+                                     <span>{{request.session.currency}}{{product.PRDPrice|currency:request.session.currency|intcomma}}</span>
                                      {%if product.PRDDiscountPrice%}
-                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency}}</span>
+                                     <span class="old-price">{{request.session.currency}}{{product.PRDDiscountPrice|currency:request.session.currency|intcomma}}</span>
                                      {%endif%}
                                  </div>
                              </div>

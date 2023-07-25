@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%eckd70i##mznm!a55p^yb&3unlw3!r)d3_g*=1zrx$_*_hy^5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*", "maxmall.azurewebsites.net",
+ALLOWED_HOSTS = ["*", "maxmall.azurewebsites.net", "max-mall.co",
                  "https://maxmall.azurewebsites.net", "127.0.0.1", "127.0.0.1:8000"]
 
 
@@ -302,9 +302,9 @@ PAYMENT_INTEGRATIONS_ID = 2405584
 
 
 ## paypal account ##
-PAYPAL_CLIENT_ID = "AdvH9io4569_jQt-c4wBxJD85SM4ujhSS1uvkrSgzIdhiO69SlTAZmcVIBlJXUzYQ3apJJ28WBFMCBmq"
-PAYPAL_SECRET = "ENwDJF-kn34uO8yg_V-MxQFr4gbKCYgrd_iCY6fmzR_KKnooB2JlDTIBwrZ4bYsoh7Nyh0-GTEgbbHAq"
-PAYPAL_ACCESS_TOKEN = "A21AAKwFzvBhx4uG4CnQyn34iea3bVSLAzda4-4WMwKLhQw1hq9JlMqhX1VqydwjeFZK_aXZrMUFdSM8OJtxruL0eyLcVZZnw"
+PAYPAL_CLIENT_ID = "AW7dfI3hX5jvcD9i6oWK8zSsNEXVrsJ4a0vqo4HfQRT87OOpx4_v9ER_RJb5BkXdRGPTY3S8T8PCnlwb"
+PAYPAL_SECRET = "EHQnnv9jsO3AZY6WcmCnvsCXRNG1X27Vj9uOIdEjTI6XUGqCdZxV3aLDMRRmcJp5HFGQBLrq1zMt46vQ"
+PAYPAL_ACCESS_TOKEN = "access_token$sandbox$29j4jt7yx4rpxq6d$8f6ee59cc4993c1dea753d7d78c053c6"
 PAYPAL_CURRENCY = "USD"
 # how you can get your PAYPAL_ACCESS_TOKEN
 # https://developer.paypal.com/api/rest/authentication/

@@ -47,7 +47,7 @@ def add_to_cart(request):
         product = Product.objects.get(id=product_id)
 
         if qyt <= 0 and product.available == 0:
-            messages.warning(request, 'This product is out of stock !')
+            messages.warning(request, 'This product is out of stock !...Try to choose another product')
             return redirect('orders:cart')
 
         if product.available < qyt and product.available == 0:
@@ -92,8 +92,7 @@ def add_to_cart(request):
                 item_supplier = OrderDetailsSupplier.objects.get(
                     order=old_orde, product=product)
                 # for i in items:
-                # remaining_quantity = product.available - item.quantity
-                # print(remaining_quantity)
+                
                 if item.quantity >= product.available:
                     qyt = item.quantity
                     # i.quantity = int(qyt)
@@ -1987,7 +1986,7 @@ def my_webhook_view(request):
             send_mail(
                 'Order NO. {}. has not been completed , payment_failed'.format(
                     order_id),
-                f'{settings.EMAILEMAIL_HOST_USER_SENDGRID}',
+                f'{settings.EMAIL_HOST_USER}',
                 [f'{customer_email}'],
                 fail_silently=False,
             )
